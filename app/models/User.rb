@@ -5,5 +5,5 @@ class User
   field :real_name, type: String
   
   # Relations
-  has_one :role
+  embed_one :role
 end
