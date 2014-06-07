@@ -5,5 +5,5 @@
 * Para crear los índice teclee en la consola <tt>rake db:mongoid:create_indexes</tt>
 * Para eliminar los índice teclee en la consola <tt>rake db:mongoid:remove_indexes</tt>
 
-== Migraciones
+=== Migraciones
 No existen migraciones no hay que preocuparse por migrar la base de datos
