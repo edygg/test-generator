@@ -3,5 +3,5 @@ class Role
   field :role_name, type: String
   
   # Relations
-  embedded_to :user
+  embedded_in :user
 end

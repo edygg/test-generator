@@ -5,5 +5,8 @@ class User
   field :real_name, type: String
   
   # Relations
-  embed_one :role
+  embeds_one :role
+
+  # Indexes
+  index({ user_name: 1 }, { unique: true, name: 'user_name_index' })
 end
