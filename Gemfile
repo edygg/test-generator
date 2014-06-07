@@ -34,6 +34,15 @@ gem 'mongoid', '~> 4.0.0.beta1', github: 'mongoid/mongoid'
 # Puma concurrent server
 gem 'puma'
 
+# Devise user gem
+gem 'devise'
+
+# Bootstrap theme
+gem 'bootstrap-sass'
+
+# Font Awesome icons
+gem 'font-awesome-sass'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
