@@ -2,5 +2,5 @@
 
 === Configuración de los índices
 
-* Para crear los índice teclee en la consola <pre>rake db:mongoid:create_indexes</pre>
-* Para eliminar los índice teclee en la consola <pre>rake db:mongoid:remove_indexes</pre>
+* Para crear los índice teclee en la consola +rake db:mongoid:create_indexes+
+* Para eliminar los índice teclee en la consola +rake db:mongoid:remove_indexes+
