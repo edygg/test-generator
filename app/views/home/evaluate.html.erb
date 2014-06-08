@@ -1,0 +1,31 @@
+<div class="well">
+	<h1>Results</h1>
+	<div class="progress">
+	  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @answers.count { |answer| answer.correct } %>" aria-valuemin="0" aria-valuemax="<%= @answers.count %>" style="width: <%= @answers.count { |answer| answer.correct } / @answers.count.to_f * 100  %>%;">
+	    Correct Answers: <%= @answers.count { |answer| answer.correct } %>
+	  </div>
+	</div>
+</div>
+
+<% @answers.each do |answer| %>
+	<div class="panel <%= if answer.correct then 'panel-success' else 'panel-danger' end %>">
+		<div class="panel-heading"><%= answer.question.question_text %></div>
+		<div class="panel-body">
+			<% answer.question.answers.each do |current_answer| %>
+				<% if current_answer.correct %>
+					<div class="radio">
+						<%= radio_button_tag current_answer.question.id, '', false, disabled: true if current_answer != answer %>
+					 	<%= radio_button_tag current_answer.question.id, '', true, disabled: true if current_answer == answer %>
+						<span class="label label-success"><%= current_answer.answer_text %></span>
+					</div>
+				<% else %>
+					<div class="radio">
+						<%= radio_button_tag current_answer.question.id, '', false, disabled: true if current_answer != answer %>
+					 	<%= radio_button_tag current_answer.question.id, '', true, disabled: true if current_answer == answer %>
+					 	<%= current_answer.answer_text %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

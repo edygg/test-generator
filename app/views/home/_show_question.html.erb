@@ -1,0 +1,24 @@
+<%= form_for :answers, url: { action: 'evaluate' }, html: { class: 'form-horizontal' } do |f| %>
+	<% questions.each do |question| %>
+		<div class="panel panel-primary">
+			<div class="panel-heading"><%= question.question_text %></div>
+			<div class="panel-body">
+				<% question.answers.each do |answer| %>
+					<div class="radio">
+						<%= f.radio_button question.id, answer.id, checked: true %> <%= answer.answer_text %>
+					</div>
+				<% end %>
+			</div>
+			<div class="panel-footer">
+				<button type="button" class="btn btn-warning pop" data-container="body" data-toggle="popover" data-placement="top" data-content="<%= question.hint %>" data-html="true">
+				 	Hint <%= icon 'exclamation-triangle' %>
+				</button>
+			</div>
+		</div>
+	<% end %>
+	<div class="row">
+		<%= f.submit 'Finish', class: 'btn btn-success' %>
+		<br>
+		<br>
+	</div>
+<% end %>
