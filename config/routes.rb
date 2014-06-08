@@ -8,7 +8,7 @@ TestGenerator::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  get '/exam' => 'home#exam'
+  get '/home/exam', as: 'exam'
   post '/evaluate' => 'home#evaluate'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -4,3 +4,4 @@
 
 $(document).ready ->
 	$(".pop").popover()
+	return
